@@ -15,13 +15,15 @@ namespace supermarkett_mvp.Views
     {
         private bool isEdit;
         private bool isSuccesful;
-        private string message; 
+        private string message;
         public PayModeView()
         {
             InitializeComponent();
             AssociateAndRaiseViewEvents();
 
             tabControl1.TabPages.Remove(tabPagePayModeDetail);
+
+            BtnClose.Click += delegate { this.Close(); };
         }
 
         private void AssociateAndRaiseViewEvents()
@@ -38,38 +40,38 @@ namespace supermarkett_mvp.Views
             };
         }
 
-        public string PayModeId 
-        { 
-            get { return TxtPayModeId.Text; } 
-            set { TxtPayModeId.Text = value; } 
+        public string PayModeId
+        {
+            get { return TxtPayModeId.Text; }
+            set { TxtPayModeId.Text = value; }
         }
-        public string PayModeName 
-        { 
-            get { return TxtPayModeName.Text; } 
+        public string PayModeName
+        {
+            get { return TxtPayModeName.Text; }
             set { TxtPayModeName.Text = value; }
         }
-        public string PayModeObservation 
-        { 
-            get { return TxtPayModeObservation.Text; } 
+        public string PayModeObservation
+        {
+            get { return TxtPayModeObservation.Text; }
             set { TxtPayModeObservation.Text = value; }
         }
-        public string SearchValue 
-        { 
-            get { return TxtSearch.Text; } 
+        public string SearchValue
+        {
+            get { return TxtSearch.Text; }
             set { TxtSearch.Text = value; }
         }
-        public bool IsEdit 
-        { 
+        public bool IsEdit
+        {
             get { return isEdit; }
             set { isEdit = value; }
         }
-        public bool IsSuccesful 
-        { 
+        public bool IsSuccesful
+        {
             get { return isSuccesful; }
             set { isSuccesful = value; }
         }
-        public string Message 
-        { 
+        public string Message
+        {
             get { return message; }
             set { message = value; }
         }
@@ -89,11 +91,15 @@ namespace supermarkett_mvp.Views
 
         private static PayModeView instance;
 
-        public static PayModeView GetInstance()
+        public static PayModeView GetInstance(Form parentContainer)
         {
             if (instance == null || instance.IsDisposed)
             {
                 instance = new PayModeView();
+                instance.MdiParent = parentContainer;
+
+                instance.FormBorderStyle = FormBorderStyle.None;
+                instance.Dock = DockStyle.Fill;
             }
             else
             {
@@ -112,6 +118,11 @@ namespace supermarkett_mvp.Views
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DgPayMode_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
