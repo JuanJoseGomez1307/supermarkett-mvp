@@ -20,17 +20,50 @@ namespace supermarkett_mvp._Repositories
 
         public void Add(ProvidersModel providersModel)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Providers VALUES (@name, @observation)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = providersModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = providersModel.Observation;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM Providers WHERE Provider_Id = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Edit(ProvidersModel providersModel)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"UPDATE Providers 
+                                        SET Provider_Name = @name, 
+                                        Provider_Observation = @observation 
+                                        WHERE Provider_Id = @id";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = providersModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = providersModel.Observation;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = providersModel.Id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<ProvidersModel> GetAll()
