@@ -47,9 +47,9 @@ namespace supermarkett_mvp._Repositories
                     while (reader.Read())
                     {
                         var providersModel = new ProvidersModel();
-                        providersModel.Id = (int)reader["Pay_Mode_Id"];
-                        providersModel.Name = reader["Pay_Mode_Name"].ToString();
-                        providersModel.Observation = reader["Pay_Mode_Observation"].ToString();
+                        providersModel.Id = (int)reader["Provider_Id"];
+                        providersModel.Name = reader["Provider_Name"].ToString();
+                        providersModel.Observation = reader["Provider_Observation"].ToString();
                         providersList.Add(providersModel);
                     }
                 }
