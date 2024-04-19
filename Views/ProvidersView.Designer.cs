@@ -300,7 +300,7 @@
             Controls.Add(tabControl1);
             Controls.Add(panel1);
             Name = "ProvidersView";
-            Text = "ProvidersView";
+            Text = "Providers Management";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
