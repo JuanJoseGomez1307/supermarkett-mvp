@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            label1 = new Label();
             pictureBox1 = new PictureBox();
+            label1 = new Label();
             tabControl1 = new TabControl();
             tabPageProductsList = new TabPage();
-            tabPageProductsDetail = new TabPage();
-            label2 = new Label();
-            TxtSearch = new TextBox();
-            BtnSearch = new Button();
-            dataGridView1 = new DataGridView();
-            BtnNew = new Button();
-            BtnEdit = new Button();
-            BtnDelete = new Button();
             BtnClose = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            TxtProductId = new TextBox();
-            TxtProductName = new TextBox();
-            TxtProductObservation = new TextBox();
-            BtnSave = new Button();
+            BtnDelete = new Button();
+            BtnEdit = new Button();
+            BtnNew = new Button();
+            DgProduct = new DataGridView();
+            BtnSearch = new Button();
+            TxtSearch = new TextBox();
+            label2 = new Label();
+            tabPageProductsDetail = new TabPage();
             BtnCancel = new Button();
+            BtnSave = new Button();
+            TxtProductObservation = new TextBox();
+            TxtProductName = new TextBox();
+            TxtProductId = new TextBox();
+            label5 = new Label();
+            label4 = new Label();
+            label3 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabControl1.SuspendLayout();
             tabPageProductsList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DgProduct).BeginInit();
             tabPageProductsDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -68,16 +68,6 @@
             panel1.Size = new Size(800, 125);
             panel1.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(182, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 54);
-            label1.TabIndex = 0;
-            label1.Text = "Products";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.products;
@@ -87,6 +77,16 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(182, 34);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 54);
+            label1.TabIndex = 0;
+            label1.Text = "Products";
             // 
             // tabControl1
             // 
@@ -105,7 +105,7 @@
             tabPageProductsList.Controls.Add(BtnDelete);
             tabPageProductsList.Controls.Add(BtnEdit);
             tabPageProductsList.Controls.Add(BtnNew);
-            tabPageProductsList.Controls.Add(dataGridView1);
+            tabPageProductsList.Controls.Add(DgProduct);
             tabPageProductsList.Controls.Add(BtnSearch);
             tabPageProductsList.Controls.Add(TxtSearch);
             tabPageProductsList.Controls.Add(label2);
@@ -116,6 +116,81 @@
             tabPageProductsList.TabIndex = 0;
             tabPageProductsList.Text = "Products List";
             tabPageProductsList.UseVisualStyleBackColor = true;
+            // 
+            // BtnClose
+            // 
+            BtnClose.Image = Properties.Resources.cerrar;
+            BtnClose.Location = new Point(600, 231);
+            BtnClose.Name = "BtnClose";
+            BtnClose.Size = new Size(130, 42);
+            BtnClose.TabIndex = 7;
+            BtnClose.UseVisualStyleBackColor = true;
+            // 
+            // BtnDelete
+            // 
+            BtnDelete.Image = Properties.Resources.delete;
+            BtnDelete.Location = new Point(600, 182);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(130, 42);
+            BtnDelete.TabIndex = 6;
+            BtnDelete.UseVisualStyleBackColor = true;
+            // 
+            // BtnEdit
+            // 
+            BtnEdit.Image = Properties.Resources.edit;
+            BtnEdit.Location = new Point(600, 132);
+            BtnEdit.Name = "BtnEdit";
+            BtnEdit.Size = new Size(130, 42);
+            BtnEdit.TabIndex = 5;
+            BtnEdit.UseVisualStyleBackColor = true;
+            // 
+            // BtnNew
+            // 
+            BtnNew.Image = Properties.Resources._new;
+            BtnNew.Location = new Point(600, 85);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(130, 42);
+            BtnNew.TabIndex = 4;
+            BtnNew.UseVisualStyleBackColor = true;
+            // 
+            // DgProduct
+            // 
+            DgProduct.AllowUserToAddRows = false;
+            DgProduct.AllowUserToDeleteRows = false;
+            DgProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgProduct.Location = new Point(16, 85);
+            DgProduct.Name = "DgProduct";
+            DgProduct.ReadOnly = true;
+            DgProduct.RowHeadersWidth = 51;
+            DgProduct.Size = new Size(504, 188);
+            DgProduct.TabIndex = 3;
+            // 
+            // BtnSearch
+            // 
+            BtnSearch.Image = Properties.Resources.search_small;
+            BtnSearch.Location = new Point(440, 37);
+            BtnSearch.Name = "BtnSearch";
+            BtnSearch.Size = new Size(80, 39);
+            BtnSearch.TabIndex = 2;
+            BtnSearch.UseVisualStyleBackColor = true;
+            // 
+            // TxtSearch
+            // 
+            TxtSearch.Location = new Point(16, 43);
+            TxtSearch.Name = "TxtSearch";
+            TxtSearch.PlaceholderText = "Data to search";
+            TxtSearch.Size = new Size(391, 27);
+            TxtSearch.TabIndex = 1;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(16, 13);
+            label2.Name = "label2";
+            label2.Size = new Size(114, 20);
+            label2.TabIndex = 0;
+            label2.Text = "Search Product";
             // 
             // tabPageProductsDetail
             // 
@@ -135,100 +210,48 @@
             tabPageProductsDetail.Text = "Products Detail";
             tabPageProductsDetail.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // BtnCancel
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(16, 13);
-            label2.Name = "label2";
-            label2.Size = new Size(114, 20);
-            label2.TabIndex = 0;
-            label2.Text = "Search Product";
+            BtnCancel.Image = Properties.Resources.cancel;
+            BtnCancel.Location = new Point(245, 240);
+            BtnCancel.Name = "BtnCancel";
+            BtnCancel.Size = new Size(94, 44);
+            BtnCancel.TabIndex = 7;
+            BtnCancel.UseVisualStyleBackColor = true;
             // 
-            // TxtSearch
+            // BtnSave
             // 
-            TxtSearch.Location = new Point(16, 43);
-            TxtSearch.Name = "TxtSearch";
-            TxtSearch.PlaceholderText = "Data to search";
-            TxtSearch.Size = new Size(391, 27);
-            TxtSearch.TabIndex = 1;
+            BtnSave.Image = Properties.Resources.save;
+            BtnSave.Location = new Point(71, 240);
+            BtnSave.Name = "BtnSave";
+            BtnSave.Size = new Size(94, 44);
+            BtnSave.TabIndex = 6;
+            BtnSave.UseVisualStyleBackColor = true;
             // 
-            // BtnSearch
+            // TxtProductObservation
             // 
-            BtnSearch.Image = Properties.Resources.search_small;
-            BtnSearch.Location = new Point(440, 37);
-            BtnSearch.Name = "BtnSearch";
-            BtnSearch.Size = new Size(80, 39);
-            BtnSearch.TabIndex = 2;
-            BtnSearch.UseVisualStyleBackColor = true;
+            TxtProductObservation.Location = new Point(26, 171);
+            TxtProductObservation.Multiline = true;
+            TxtProductObservation.Name = "TxtProductObservation";
+            TxtProductObservation.PlaceholderText = "Product observation";
+            TxtProductObservation.Size = new Size(394, 51);
+            TxtProductObservation.TabIndex = 5;
             // 
-            // dataGridView1
+            // TxtProductName
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(16, 85);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(504, 188);
-            dataGridView1.TabIndex = 3;
+            TxtProductName.Location = new Point(26, 107);
+            TxtProductName.Name = "TxtProductName";
+            TxtProductName.PlaceholderText = "Product name";
+            TxtProductName.Size = new Size(271, 27);
+            TxtProductName.TabIndex = 4;
             // 
-            // BtnNew
+            // TxtProductId
             // 
-            BtnNew.Image = Properties.Resources._new;
-            BtnNew.Location = new Point(600, 85);
-            BtnNew.Name = "BtnNew";
-            BtnNew.Size = new Size(130, 42);
-            BtnNew.TabIndex = 4;
-            BtnNew.UseVisualStyleBackColor = true;
-            // 
-            // BtnEdit
-            // 
-            BtnEdit.Image = Properties.Resources.edit;
-            BtnEdit.Location = new Point(600, 132);
-            BtnEdit.Name = "BtnEdit";
-            BtnEdit.Size = new Size(130, 42);
-            BtnEdit.TabIndex = 5;
-            BtnEdit.UseVisualStyleBackColor = true;
-            // 
-            // BtnDelete
-            // 
-            BtnDelete.Image = Properties.Resources.delete;
-            BtnDelete.Location = new Point(600, 182);
-            BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(130, 42);
-            BtnDelete.TabIndex = 6;
-            BtnDelete.UseVisualStyleBackColor = true;
-            // 
-            // BtnClose
-            // 
-            BtnClose.Image = Properties.Resources.cerrar;
-            BtnClose.Location = new Point(600, 231);
-            BtnClose.Name = "BtnClose";
-            BtnClose.Size = new Size(130, 42);
-            BtnClose.TabIndex = 7;
-            BtnClose.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(26, 17);
-            label3.Name = "label3";
-            label3.Size = new Size(82, 20);
-            label3.TabIndex = 0;
-            label3.Text = "Product Id";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(27, 84);
-            label4.Name = "label4";
-            label4.Size = new Size(110, 20);
-            label4.TabIndex = 1;
-            label4.Text = "Product Name";
+            TxtProductId.Location = new Point(27, 46);
+            TxtProductId.Name = "TxtProductId";
+            TxtProductId.Size = new Size(125, 27);
+            TxtProductId.TabIndex = 3;
+            TxtProductId.Text = "Product id";
             // 
             // label5
             // 
@@ -240,48 +263,25 @@
             label5.TabIndex = 2;
             label5.Text = "Product Observation";
             // 
-            // TxtProductId
+            // label4
             // 
-            TxtProductId.Location = new Point(27, 46);
-            TxtProductId.Name = "TxtProductId";
-            TxtProductId.Size = new Size(125, 27);
-            TxtProductId.TabIndex = 3;
-            TxtProductId.Text = "Product id";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.Location = new Point(27, 84);
+            label4.Name = "label4";
+            label4.Size = new Size(110, 20);
+            label4.TabIndex = 1;
+            label4.Text = "Product Name";
             // 
-            // TxtProductName
+            // label3
             // 
-            TxtProductName.Location = new Point(26, 107);
-            TxtProductName.Name = "TxtProductName";
-            TxtProductName.PlaceholderText = "Product name";
-            TxtProductName.Size = new Size(271, 27);
-            TxtProductName.TabIndex = 4;
-            // 
-            // TxtProductObservation
-            // 
-            TxtProductObservation.Location = new Point(26, 171);
-            TxtProductObservation.Multiline = true;
-            TxtProductObservation.Name = "TxtProductObservation";
-            TxtProductObservation.PlaceholderText = "Product observation";
-            TxtProductObservation.Size = new Size(394, 51);
-            TxtProductObservation.TabIndex = 5;
-            // 
-            // BtnSave
-            // 
-            BtnSave.Image = Properties.Resources.save;
-            BtnSave.Location = new Point(71, 240);
-            BtnSave.Name = "BtnSave";
-            BtnSave.Size = new Size(94, 44);
-            BtnSave.TabIndex = 6;
-            BtnSave.UseVisualStyleBackColor = true;
-            // 
-            // BtnCancel
-            // 
-            BtnCancel.Image = Properties.Resources.cancel;
-            BtnCancel.Location = new Point(245, 240);
-            BtnCancel.Name = "BtnCancel";
-            BtnCancel.Size = new Size(94, 44);
-            BtnCancel.TabIndex = 7;
-            BtnCancel.UseVisualStyleBackColor = true;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(26, 17);
+            label3.Name = "label3";
+            label3.Size = new Size(82, 20);
+            label3.TabIndex = 0;
+            label3.Text = "Product Id";
             // 
             // ProductView
             // 
@@ -298,9 +298,9 @@
             tabControl1.ResumeLayout(false);
             tabPageProductsList.ResumeLayout(false);
             tabPageProductsList.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DgProduct).EndInit();
             tabPageProductsDetail.ResumeLayout(false);
             tabPageProductsDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
@@ -315,7 +315,7 @@
         private TextBox TxtSearch;
         private Label label2;
         private Button BtnSearch;
-        private DataGridView dataGridView1;
+        private DataGridView DgProduct;
         private Button BtnClose;
         private Button BtnDelete;
         private Button BtnEdit;
