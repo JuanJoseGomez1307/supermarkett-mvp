@@ -33,12 +33,14 @@
             BtnExit = new Button();
             pictureBox1 = new PictureBox();
             BtnPayMode = new Button();
+            BtnProducts = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(BtnProducts);
             panel1.Controls.Add(BtnProviders);
             panel1.Controls.Add(BtnExit);
             panel1.Controls.Add(pictureBox1);
@@ -54,9 +56,9 @@
             // 
             BtnProviders.BackgroundImage = Properties.Resources.providers;
             BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProviders.Location = new Point(12, 286);
+            BtnProviders.Location = new Point(3, 286);
             BtnProviders.Name = "BtnProviders";
-            BtnProviders.Size = new Size(235, 100);
+            BtnProviders.Size = new Size(244, 114);
             BtnProviders.TabIndex = 4;
             BtnProviders.UseVisualStyleBackColor = true;
             // 
@@ -65,9 +67,9 @@
             BtnExit.BackgroundImage = Properties.Resources.salida;
             BtnExit.BackgroundImageLayout = ImageLayout.Zoom;
             BtnExit.Dock = DockStyle.Bottom;
-            BtnExit.Location = new Point(0, 521);
+            BtnExit.Location = new Point(0, 510);
             BtnExit.Name = "BtnExit";
-            BtnExit.Size = new Size(250, 91);
+            BtnExit.Size = new Size(250, 102);
             BtnExit.TabIndex = 3;
             BtnExit.UseVisualStyleBackColor = true;
             // 
@@ -92,6 +94,16 @@
             BtnPayMode.TabIndex = 1;
             BtnPayMode.UseVisualStyleBackColor = true;
             // 
+            // BtnProducts
+            // 
+            BtnProducts.BackgroundImage = Properties.Resources.products;
+            BtnProducts.BackgroundImageLayout = ImageLayout.Zoom;
+            BtnProducts.Location = new Point(3, 176);
+            BtnProducts.Name = "BtnProducts";
+            BtnProducts.Size = new Size(244, 104);
+            BtnProducts.TabIndex = 5;
+            BtnProducts.UseVisualStyleBackColor = true;
+            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -114,5 +126,6 @@
         private PictureBox pictureBox1;
         private Button BtnExit;
         private Button BtnProviders;
+        private Button BtnProducts;
     }
 }
