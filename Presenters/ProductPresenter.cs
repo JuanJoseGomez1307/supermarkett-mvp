@@ -47,18 +47,68 @@ namespace supermarkett_mvp.Presenters
 
         private void CancelAction(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            CleanViewFields();
         }
 
 
         private void SaveProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            var products = new ProductsModel();
+            products.Id = Convert.ToInt32(view.ProductId);
+            products.Name = view.ProductName;
+            products.Observation = view.ProductObservation;
+
+            try
+            {
+                new Common.ModelDataValidation().Validate(products);
+
+                if (view.IsEdit)
+                {
+                    repository.Edit(products);
+                    view.Message = "Product edited successfuly";
+                }
+                else
+                {
+                    repository.Add(products);
+                    view.Message = "Product added successfuly";
+                }
+                view.IsSuccessful = true;
+                LoadAllProductList();
+                CleanViewFields();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = ex.Message;
+            }
+        }
+
+        private void CleanViewFields()
+        {
+            view.ProductId = "0";
+            view.ProductName = "";
+            view.ProductObservation = "";
         }
 
         private void DeleteSelectedProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            try
+            {
+                var product = (ProductsModel)productBindingSource.Current;
+
+                repository.Delete(product.Id);
+                view.IsSuccessful = true;
+                view.Message = "Product deleted successfully";
+                LoadAllProductList();
+            }
+            catch (Exception ex)
+            {
+                view.IsSuccessful = false;
+                view.Message = "An error ocurred, could not delete product";
+            }
         }
 
         private void LoadSelectProductToEdit(object? sender, EventArgs e)

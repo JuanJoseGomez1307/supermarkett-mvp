@@ -256,9 +256,11 @@
             // 
             TxtProductId.Location = new Point(27, 46);
             TxtProductId.Name = "TxtProductId";
+            TxtProductId.ReadOnly = true;
             TxtProductId.Size = new Size(125, 27);
             TxtProductId.TabIndex = 3;
-            TxtProductId.Text = "Product id";
+            TxtProductId.Text = "0";
+            TxtProductId.TextAlign = HorizontalAlignment.Right;
             // 
             // label5
             // 
