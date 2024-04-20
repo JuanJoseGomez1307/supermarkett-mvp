@@ -158,6 +158,7 @@
             // 
             DgCategorie.AllowUserToAddRows = false;
             DgCategorie.AllowUserToDeleteRows = false;
+            DgCategorie.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgCategorie.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgCategorie.Location = new Point(25, 87);
             DgCategorie.Name = "DgCategorie";

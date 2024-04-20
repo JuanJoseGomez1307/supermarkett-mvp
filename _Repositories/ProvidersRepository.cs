@@ -7,7 +7,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Data;
 using supermarkett_mvp.Models;
 using System.Data;
-using supermarkett_mvp.Models;
+//using supermarkett_mvp.Models;
 
 namespace supermarkett_mvp._Repositories
 {

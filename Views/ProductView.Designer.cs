@@ -162,6 +162,7 @@
             DgProduct.AllowUserToAddRows = false;
             DgProduct.AllowUserToDeleteRows = false;
             DgProduct.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DgProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DgProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DgProduct.Location = new Point(16, 85);
             DgProduct.Name = "DgProduct";
