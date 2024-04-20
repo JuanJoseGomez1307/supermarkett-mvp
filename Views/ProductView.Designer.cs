@@ -71,9 +71,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.products;
-            pictureBox1.Location = new Point(31, 26);
+            pictureBox1.Location = new Point(20, 24);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 62);
+            pictureBox1.Size = new Size(145, 82);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -297,7 +297,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(tabControl1);
             Controls.Add(panel1);
-            IsMdiContainer = true;
             Name = "ProductView";
             Text = "Products Management";
             panel1.ResumeLayout(false);

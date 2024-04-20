@@ -63,12 +63,20 @@ namespace supermarkett_mvp.Presenters
 
         private void LoadSelectProductToEdit(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            var product = (ProductsModel)productBindingSource.Current;
+
+            view.ProductId = product.Id.ToString();
+            view.ProductName = product.Name;
+            view.ProductObservation = product.Observation;
+
+            view.IsEdit = true;
         }
 
         private void AddNewProduct(object? sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            view.IsEdit = false;
         }
 
         private void SearchProduct(object? sender, EventArgs e)
