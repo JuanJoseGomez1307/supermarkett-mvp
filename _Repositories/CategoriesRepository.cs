@@ -19,17 +19,50 @@ namespace supermarkett_mvp._Repositories
 
         public void Add(CategoriesModel categoriesModel)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "INSERT INTO Categories VALUES (@name, @observation)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = categoriesModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = categoriesModel.Observation;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = "DELETE FROM Categories WHERE Categorie_Id = @id";
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public void Edit(CategoriesModel categoriesModel)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            using (var connection = new SqlConnection(connectionString))
+            using (var command = new SqlCommand())
+            {
+                connection.Open();
+                command.Connection = connection;
+                command.CommandText = @"UPDATE Categories 
+                                        SET Categorie_Name = @name, 
+                                        Categorie_Observation = @observation 
+                                        WHERE Categorie_Id = @id";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = categoriesModel.Name;
+                command.Parameters.Add("@observation", SqlDbType.NVarChar).Value = categoriesModel.Observation;
+                command.Parameters.Add("@id", SqlDbType.Int).Value = categoriesModel.Id;
+                command.ExecuteNonQuery();
+            }
         }
 
         public IEnumerable<CategoriesModel> GetAll()

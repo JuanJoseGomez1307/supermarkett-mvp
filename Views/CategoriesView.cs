@@ -38,7 +38,56 @@ namespace supermarkett_mvp.Views
                 }
             };
 
+            BtnNew.Click += delegate { 
+                AddNewEvent?.Invoke(this, EventArgs.Empty);
 
+                tabControl1.TabPages.Remove(tabPageCategoriesList);
+                tabControl1.TabPages.Add(tabPageCategoriaDetail);
+                tabPageCategoriaDetail.Text = "Add New Categorie";
+
+            };
+
+            BtnEdit.Click += delegate { 
+                EditEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl1.TabPages.Remove(tabPageCategoriesList);
+                tabControl1.TabPages.Add(tabPageCategoriaDetail);
+                tabPageCategoriaDetail.Text = "Edit Categorie";
+            };
+
+            BtnDelete.Click += delegate { 
+                DeleteEvent?.Invoke(this, EventArgs.Empty);
+
+                var result = MessageBox.Show(
+                    "Are you sure you want to delete the selected Categories",
+                    "Warning",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    DeleteEvent?.Invoke(this, EventArgs.Empty);
+                    MessageBox.Show(Message);
+                }
+            };
+
+            BtnSave.Click += delegate { 
+                SaveEvent?.Invoke(this, EventArgs.Empty);
+
+                if (isSuccessful)
+                {
+                    tabControl1.TabPages.Remove(tabPageCategoriaDetail);
+                    tabControl1.TabPages.Add(tabPageCategoriesList);
+                }
+                MessageBox.Show(Message);
+            };
+
+            BtnCancel.Click += delegate { 
+                CancelEvent?.Invoke(this, EventArgs.Empty);
+
+                tabControl1.TabPages.Remove(tabPageCategoriaDetail);
+                tabControl1.TabPages.Add(tabPageCategoriesList);
+
+            };
         }
 
         public string CategorieId 
