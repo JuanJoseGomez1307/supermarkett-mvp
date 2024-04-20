@@ -175,7 +175,7 @@ namespace supermarkett_mvp.Properties {
         {
             get
             {
-                object obj = ResourceManager.GetObject("products", resourceCulture);
+                object obj = ResourceManager.GetObject("categories", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

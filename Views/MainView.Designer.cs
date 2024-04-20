@@ -58,9 +58,9 @@
             // 
             BtnCategories.BackgroundImage = Properties.Resources.categories;
             BtnCategories.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnCategories.Location = new Point(3, 406);
+            BtnCategories.Location = new Point(3, 395);
             BtnCategories.Name = "BtnCategories";
-            BtnCategories.Size = new Size(244, 110);
+            BtnCategories.Size = new Size(244, 121);
             BtnCategories.TabIndex = 6;
             BtnCategories.UseVisualStyleBackColor = true;
             // 
@@ -68,7 +68,7 @@
             // 
             BtnProducts.BackgroundImage = Properties.Resources.products;
             BtnProducts.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProducts.Location = new Point(3, 176);
+            BtnProducts.Location = new Point(3, 165);
             BtnProducts.Name = "BtnProducts";
             BtnProducts.Size = new Size(244, 104);
             BtnProducts.TabIndex = 5;
@@ -78,7 +78,7 @@
             // 
             BtnProviders.BackgroundImage = Properties.Resources.providers;
             BtnProviders.BackgroundImageLayout = ImageLayout.Zoom;
-            BtnProviders.Location = new Point(3, 286);
+            BtnProviders.Location = new Point(3, 275);
             BtnProviders.Name = "BtnProviders";
             BtnProviders.Size = new Size(244, 114);
             BtnProviders.TabIndex = 4;
@@ -112,7 +112,7 @@
             BtnPayMode.BackgroundImageLayout = ImageLayout.Zoom;
             BtnPayMode.Location = new Point(0, 68);
             BtnPayMode.Name = "BtnPayMode";
-            BtnPayMode.Size = new Size(247, 102);
+            BtnPayMode.Size = new Size(247, 91);
             BtnPayMode.TabIndex = 1;
             BtnPayMode.UseVisualStyleBackColor = true;
             // 
